@@ -1,0 +1,21 @@
+[package]
+name = "easy-ray"
+version = "0.0.1"
+edition = "2024"
+authors = ["Artem V. Ageev <artem.v.ageev@gmail.com>"]
+license = "LGPL-2.1-only"
+repository = "https://github.com/theavege/easyray-rs"
+description = "A lightweight application loop for Raylib games"
+keywords = ["gamedev", "raylib", "graphics"]
+categories = ["game-development", "game-engines"]
+readme = "README.md"
+
+[target.'cfg(windows)'.dependencies]
+raylib = { version = "6.0", features = ["raygui"] }
+
+[target.'cfg(unix)'.dependencies]
+raylib = { version = "6.0", features = ["raygui", "nobuild"] }
+
+[dev-dependencies]
+hecs = "0.11.2"
+rand = { version = "0.10" }
